@@ -4,7 +4,7 @@
 # lsp-shader
 > LSP Clients for ShaderLab
 
-[![CI](https://github.com/jcs-elpa/lsp-shader/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/lsp-shader/actions/workflows/test.yml)
+[![CI](https://github.com/shader-ls/lsp-shader/actions/workflows/test.yml/badge.svg)](https://github.com/shader-ls/lsp/actions/workflows/test.yml)
 
 WIP
 
