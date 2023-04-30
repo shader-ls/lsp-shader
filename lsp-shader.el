@@ -45,11 +45,29 @@ This is only for development use."
   :type 'string
   :group 'lsp-shader)
 
+(defcustom lsp-shader-completion-word t
+  "Non-nil to enable word completion."
+  :type 'string
+  :group 'lsp-shader)
+
+(defun lsp-shader--cls-download-server (_client callback error-callback update?)
+  "Install/update shader-ls language server using `dotnet tool'.
+
+Will invoke CALLBACK or ERROR-CALLBACK based on result.
+Will update if UPDATE? is t"
+  (lsp-async-start-process
+   callback
+   error-callback
+   "dotnet" "tool" (if update? "update" "install") "-g" "shader-ls"))
+
 (defun lsp-shader--server-command ()
   "Generate startup command for ShaderLab language server."
   (or (and lsp-shader-server-path
            (list lsp-shader-server-path "--stdio"))
       (list (lsp-package-path 'shader-ls) "--stdio")))
+
+(lsp-register-custom-settings
+ `(("ShaderLab.CompletionWord" lsp-shader-completion-word)))
 
 (lsp-register-client
  (make-lsp-client
@@ -57,9 +75,8 @@ This is only for development use."
   :activation-fn (lsp-activate-on "shaderlab")
   :major-modes '(shader-mode)
   :priority -1
-  :server-id 'shader-ls))
-
-(add-to-list 'lsp-language-id-configuration '(shader-mode . "shaderlab"))
+  :server-id 'shader-ls
+  :download-server-fn #'lsp-shader--cls-download-server))
 
 (provide 'lsp-shader)
 ;;; lsp-shader.el ends here
