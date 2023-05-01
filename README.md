@@ -6,7 +6,22 @@
 
 [![CI](https://github.com/shader-ls/lsp-shader/actions/workflows/test.yml/badge.svg)](https://github.com/shader-ls/lsp/actions/workflows/test.yml)
 
-WIP
+## 💾 Quickstart
+
+```elisp
+(use-package lsp-shader
+  :ensure t
+  :hook (text-mode . (lambda ()
+                       (require lsp-shader)
+                       (lsp))))  ; or lsp-deferred
+```
+
+## 🔧 Configuration
+
+`lsp-shader` supports following configuration. Each configuration is described
+in detailed in [shader-ls Settings](https://github.com/shader-ls/shader-language-server#-settings).
+
+- `ShaderLab.CompletionWord` via lsp-shader-completion-word
 
 ## Contribute
 
