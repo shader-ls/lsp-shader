@@ -6,6 +6,8 @@
 
 [![CI](https://github.com/shader-ls/lsp-shader/actions/workflows/test.yml/badge.svg)](https://github.com/shader-ls/lsp/actions/workflows/test.yml)
 
+`lsp-mode` client leveraging [shader-language-server](https://github.com/shader-ls/shader-language-server).
+
 ## 💾 Quickstart
 
 ```elisp
