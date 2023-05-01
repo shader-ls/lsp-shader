@@ -8,6 +8,10 @@
 
 `lsp-mode` client leveraging [shader-language-server](https://github.com/shader-ls/shader-language-server).
 
+<p align="center">
+<img src="etc/screenshot.png" />
+</p>
+
 ## 💾 Quickstart
 
 ```elisp
