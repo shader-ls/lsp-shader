@@ -60,22 +60,28 @@ Will update if UPDATE? is t"
    error-callback
    "dotnet" "tool" (if update? "update" "install") "-g" "shader-ls"))
 
+(defun lsp-shader--cls-test-shader-ls-present ()
+  "Return non-nil if dotnet tool shader-ls is installed globally."
+  (string-match-p "shader-ls"
+                  (shell-command-to-string "dotnet tool list -g")))
+
 (defun lsp-shader--server-command ()
   "Generate startup command for ShaderLab language server."
   (or (and lsp-shader-server-path
            (list lsp-shader-server-path "--stdio"))
-      (list (lsp-package-path 'shader-ls) "--stdio")))
+      (list "shader-ls" "--stdio")))
 
 (lsp-register-custom-settings
  `(("ShaderLab.CompletionWord" lsp-shader-completion-word)))
 
 (lsp-register-client
  (make-lsp-client
-  :new-connection (lsp-stdio-connection #'lsp-shader--server-command)
-  :activation-fn (lsp-activate-on "shaderlab")
-  :major-modes '(shader-mode)
+  :new-connection (lsp-stdio-connection #'lsp-shader--server-command
+                                        #'lsp-shader--cls-test-shader-ls-present)
   :priority -1
   :server-id 'shader-ls
+  :activation-fn (lsp-activate-on "shaderlab")
+  :major-modes '(shader-mode)
   :download-server-fn #'lsp-shader--cls-download-server))
 
 (provide 'lsp-shader)
