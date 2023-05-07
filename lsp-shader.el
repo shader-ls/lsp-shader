@@ -45,6 +45,12 @@ This is only for development use."
   :type 'string
   :group 'lsp-shader)
 
+(defcustom lsp-shader-active-modes
+  '(shader-mode hlsl-mode glsl-mode)
+  "List of major mode that work with shader-ls."
+  :type 'list
+  :group 'lsp-shader)
+
 (defcustom lsp-shader-completion-word t
   "Non-nil to enable word completion."
   :type 'string
@@ -80,8 +86,8 @@ Will update if UPDATE? is t"
                                         #'lsp-shader--cls-test-shader-ls-present)
   :priority -1
   :server-id 'shader-ls
-  :activation-fn (lsp-activate-on "shaderlab")
-  :major-modes '(shader-mode)
+  :major-modes lsp-shader-active-modes
+  :add-on? t
   :download-server-fn #'lsp-shader--cls-download-server))
 
 (provide 'lsp-shader)
