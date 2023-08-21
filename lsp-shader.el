@@ -36,7 +36,7 @@
 (defgroup lsp-shader nil
   "Settings for the ShaderLab Language Server."
   :group 'lsp-mode
-  :link '(url-link "https://github.com/lsp-mode/lsp-shader"))
+  :link '(url-link "https://github.com/shader-ls/lsp-shader"))
 
 (defcustom lsp-shader-server-path nil
   "Path points for ShaderLab LSP.
