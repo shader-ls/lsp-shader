@@ -78,7 +78,7 @@ Will update if UPDATE? is t"
       (list "shader-ls" "--stdio")))
 
 (lsp-register-custom-settings
- `(("ShaderLab.CompletionWord" lsp-shader-completion-word)))
+ `(("ShaderLS.CompletionWord" lsp-shader-completion-word)))
 
 (lsp-register-client
  (make-lsp-client
