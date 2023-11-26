@@ -2,6 +2,8 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![JCS-ELPA](https://raw.githubusercontent.com/jcs-emacs/badges/master/elpa/v/lsp-shader.svg)](https://jcs-emacs.github.io/jcs-elpa/#/lsp-shader)
+[![MELPA](https://melpa.org/packages/lsp-shader-badge.svg)](https://melpa.org/#/lsp-shader)
+[![MELPA Stable](https://stable.melpa.org/packages/lsp-shader-badge.svg)](https://stable.melpa.org/#/lsp-shader)
 
 # lsp-shader
 > LSP Clients for ShaderLab
