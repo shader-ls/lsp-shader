@@ -53,7 +53,7 @@ This is only for development use."
 
 (defcustom lsp-shader-completion-word t
   "Non-nil to enable word completion."
-  :type 'string
+  :type 'boolean
   :group 'lsp-shader)
 
 (defun lsp-shader--cls-download-server (_client callback error-callback update?)
@@ -78,7 +78,7 @@ Will update if UPDATE? is t"
       (list "shader-ls" "--stdio")))
 
 (lsp-register-custom-settings
- `(("ShaderLS.CompletionWord" lsp-shader-completion-word)))
+ `(("ShaderLS.CompletionWord" lsp-shader-completion-word t)))
 
 (lsp-register-client
  (make-lsp-client
