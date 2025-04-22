@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "lsp-shader"
          "0.1.0"
          "LSP Clients for ShaderLab")
