@@ -6,7 +6,7 @@
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; URL: https://github.com/shader-ls/lsp-shader
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "27.1") (lsp-mode "6.1"))
+;; Package-Requires: ((emacs "28.1") (lsp-mode "6.1"))
 ;; Keywords: convenience shader
 
 ;; This file is not part of GNU Emacs.
